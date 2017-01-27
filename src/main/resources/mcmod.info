@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mythic",
+  "name": "Mythic Beasts",
+  "description": "",
+  "version": "1.10.2-1",
+  "mcversion": "1.10.2",
+  "url": "http://soggymustache.net",
+  "updateUrl": "",
+  "authorList": ["§3SoggyMustache (George Kazanjian)"],
+  "credits": "Sean_Amor",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

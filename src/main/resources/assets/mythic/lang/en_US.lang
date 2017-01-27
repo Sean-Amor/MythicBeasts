@@ -1,0 +1,13 @@
+entity.mythic.Demiguise.name=Demiguise
+entity.mythic.Niffler.name=Niffler
+
+achievement.Unseen=Seeing the Unseen
+achievement.Unseen.desc=Fine one Demiguise
+achievement.Shiny=My Shiny!
+achievement.Shiny.desc=Find one Niffler
+
+item.invis_cloak.name=Invisibility Cloak
+item.demiguise_pelt.name=Demiguise Pelt
+item.book_of_beasts.name=Book of Beasts
+
+itemGroup.tabMain=Mythic Beasts
