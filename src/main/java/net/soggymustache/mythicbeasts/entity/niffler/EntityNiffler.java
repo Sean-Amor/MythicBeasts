@@ -7,6 +7,7 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveTowardsTarget;
 import net.minecraft.entity.ai.EntityAIWander;
@@ -36,6 +37,7 @@ public class EntityNiffler extends EntityAnimal{
         this.tasks.addTask(3, new EntityAILookIdle(this));
         this.targetTasks.addTask(5, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(6, new EntityAIMoveTowardsTarget(this, 1.0D, 32.0F));
+        this.tasks.addTask(7, new EntityAILeapAtTarget(this, 0.4F));
         this.tasks.addTask(4, new EntityAIAttackMelee(this, 0.5D, true));
         this.setCanPickUpLoot(true);
 	}
