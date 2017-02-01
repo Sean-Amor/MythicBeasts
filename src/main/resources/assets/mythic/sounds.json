@@ -1,0 +1,12 @@
+{
+  "entity.wasp.hurt": {
+    "sounds": [
+      "mythic:entity/wasp/hurt"
+    ]
+  },
+  "entity.wasp.ambient": {
+    "sounds": [
+      "mythic:entity/wasp/ambient"
+    ]
+  }
+}

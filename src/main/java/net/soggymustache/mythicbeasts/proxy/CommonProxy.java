@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.soggymustache.mythicbeasts.entity.Entity;
 import net.soggymustache.mythicbeasts.entity.demiguise.EntityDemiguise;
 import net.soggymustache.mythicbeasts.entity.niffler.EntityNiffler;
+import net.soggymustache.mythicbeasts.entity.wasp.EntityWasp;
 import net.soggymustache.mythicbeasts.events.PlayerLogonEvent;
 import net.soggymustache.mythicbeasts.init.achieve.MythicAchievements;
 import net.soggymustache.mythicbeasts.init.achieve.event.CraftingEvent;
@@ -31,6 +32,7 @@ public class CommonProxy {
 		FMLCommonHandler.instance().bus().register(new PlayerLogonEvent());
 		
 		EntityRegistry.addSpawn(EntityNiffler.class, 10, 1, 2, EnumCreatureType.CREATURE, Biomes.FOREST, Biomes.FOREST_HILLS);
+		EntityRegistry.addSpawn(EntityWasp.class, 10, 1, 2, EnumCreatureType.CREATURE, Biomes.FOREST, Biomes.FOREST_HILLS);
 		EntityRegistry.addSpawn(EntityDemiguise.class, 10, 1, 2, EnumCreatureType.CREATURE, Biomes.JUNGLE);
 	}
 	 

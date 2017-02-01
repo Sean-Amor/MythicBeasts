@@ -4,6 +4,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.soggymustache.mythicbeasts.MythicBeastsMain;
 import net.soggymustache.mythicbeasts.entity.demiguise.EntityDemiguise;
 import net.soggymustache.mythicbeasts.entity.niffler.EntityNiffler;
+import net.soggymustache.mythicbeasts.entity.wasp.EntityWasp;
 
 public class Entity {
 	public static void MythicBeasts(){
@@ -11,6 +12,7 @@ public class Entity {
 	}
 		 public static void registerEntity(){
 			 	createVehicle(EntityDemiguise.class, "Demiguise", 0xB3B3B3, 0xF2F2F2);
+			 	createVehicle(EntityWasp.class, "Wasp", 0xB3B3B3, 0xF2F2F2);
 			 	createVehicle(EntityNiffler.class, "Niffler", 0x825C09, 0x181D1F);
 		 }
 		 
