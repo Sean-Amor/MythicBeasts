@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import biomesoplenty.api.sound.BOPSounds;
+import soundapi.api.sound.MBSounds;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.EntityLivingBase;
@@ -52,13 +52,13 @@ public class EntityWasp extends EntityFlying implements IMob {
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return BOPSounds.wasp_ambient;
+        return MBSounds.wasp_ambient;
     }
     
     @Override
     protected SoundEvent getHurtSound()
     {
-        return BOPSounds.wasp_hurt;
+        return MBSounds.wasp_hurt;
     }
     
     // Helper class representing a point in space that the wasp is targeting for some reason
