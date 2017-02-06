@@ -12,6 +12,8 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveTowardsTarget;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.EntityAIPanic;
+import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,17 +33,18 @@ public class EntityNiffler extends EntityAnimal{
 	
 	public EntityNiffler(World worldIn) {
 		super(worldIn);
-        this.setSize(0.7F, 0.4F);    
+        this.setSize(0.7F, 0.4F);	
         this.tasks.addTask(1, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
         this.tasks.addTask(3, new EntityAILookIdle(this));
+        this.tasks.addTask(4, new EntityAIAttackMelee(this, 0.25D, true));
         this.targetTasks.addTask(5, new EntityAIHurtByTarget(this, false, new Class[0]));
         this.tasks.addTask(6, new EntityAIMoveTowardsTarget(this, 1.0D, 32.0F));
         this.tasks.addTask(7, new EntityAILeapAtTarget(this, 0.4F));
-        this.tasks.addTask(4, new EntityAIAttackMelee(this, 0.5D, true));
+		this.tasks.addTask(8, new EntityAISwimming(this));
+        this.tasks.addTask(9, new EntityAIPanic(this, 0.38F));
         this.setCanPickUpLoot(true);
 	}
-
 
 	@Override
 	public boolean processInteract(EntityPlayer player, EnumHand hand, ItemStack stack) {
@@ -55,9 +58,9 @@ public class EntityNiffler extends EntityAnimal{
 	
 	@Override
 	public void onLivingUpdate() {
-		EntityPlayer player = this.worldObj.getClosestPlayerToEntity(this, 3.0D);
+		EntityPlayer player = this.worldObj.getClosestPlayerToEntity(this, 1.0D);
 		
-		if(this.worldObj.getClosestPlayerToEntity(this, 3.0D) != null){
+		if(this.worldObj.getClosestPlayerToEntity(this, 1.0D) != null){
 			player.inventory.dropAllItems();
 		}
 	
