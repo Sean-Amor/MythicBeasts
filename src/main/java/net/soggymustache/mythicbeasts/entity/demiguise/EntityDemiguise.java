@@ -58,9 +58,9 @@ public class EntityDemiguise extends EntityAnimal{
 	
 	@Override
 	public void onLivingUpdate() {
-		EntityPlayer player = this.worldObj.getClosestPlayerToEntity(this, 8.0D);
+		EntityPlayer player = this.worldObj.getClosestPlayerToEntity(this, 6.0D);
 
-		if(this.worldObj.getClosestPlayerToEntity(this, 8.0D) != null){
+		if(this.worldObj.getClosestPlayerToEntity(this, 6.0D) != null){
 			while(q < 2){
 				q++;
 				for (int i = 0; i < 7; ++i)
