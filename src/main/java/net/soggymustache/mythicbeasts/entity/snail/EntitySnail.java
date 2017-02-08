@@ -55,10 +55,12 @@ public class EntitySnail extends EntityLiving implements IMob {
     public void onLivingUpdate() {
         super.onLivingUpdate();
 
+           if(!this.canTriggerWalking()){
         if(!this.worldObj.isRemote && this.ticksExisted % 5 == 0) {
             Block block = this.worldObj.getBlockState(this.getPosition().add(0, -1, 0)).getBlock();
-            if(block == Blocks.GRASS)
+            if(block == Blocks.GRASS){
                 this.worldObj.setBlockState(this.getPosition().add(0, -1, 0), Blocks.DIRT.getDefaultState());}
+            }
         }
-
+    }
 }
