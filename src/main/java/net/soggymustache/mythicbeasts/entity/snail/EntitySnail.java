@@ -33,6 +33,7 @@ import net.soggymustache.mythicbeasts.init.achieve.MythicAchievements;
 import net.soggymustache.mythicbeasts.init.items.MythicItems;
 
 public class EntitySnail extends EntityAnimal{
+    private EntityAIAvoidEntity<EntityPlayer> avoidEntity;
     
     public EntitySnail(World worldIn) {
         super(worldIn);
@@ -42,8 +43,7 @@ public class EntitySnail extends EntityAnimal{
         this.tasks.addTask(3, new EntityAILookIdle(this));
         this.tasks.addTask(4, new EntityAISwimming(this));
         this.tasks.addTask(5, new EntityAIPanic(this, 0.38F));
-        this.tasks.addTask(6, new EntityAIAvoidEntity(this, EntityPlayer.class, 8.0F, 0.3F, 0.35F));
-        this.targetTasks.addTask(7, new EntityAIHurtByTarget(this, false, new Class[0]));
+        this.targetTasks.addTask(6, new EntityAIHurtByTarget(this, false, new Class[0]));
         
     }
 
