@@ -98,7 +98,6 @@ public class EntityOwl extends EntityAnimal implements IFlyingMob {
     super.applyEntityAttributes();
     getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-    
   }
 
   @Override
@@ -115,13 +114,6 @@ public class EntityOwl extends EntityAnimal implements IFlyingMob {
   public float getBlockPathWeight(BlockPos pos) {
     IBlockState bs = worldObj.getBlockState(pos.down());
     return bs.getBlock().getMaterial(bs) == Material.LEAVES ? 10.0F : 0;
-  }
-
-  @Override
-  public boolean attackEntityAsMob(Entity entityIn) {
-    super.attackEntityAsMob(entityIn);
-    float attackDamage = (float) getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue();
-    return entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), attackDamage);
   }
 
   @Override
