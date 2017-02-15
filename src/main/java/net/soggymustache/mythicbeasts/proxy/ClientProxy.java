@@ -10,12 +10,15 @@ import net.soggymustache.mythicbeasts.entity.wasp.EntityWasp;
 import net.soggymustache.mythicbeasts.entity.wasp.RenderWasp;
 import net.soggymustache.mythicbeasts.entity.snail.EntitySnail;
 import net.soggymustache.mythicbeasts.entity.snail.RenderSnail;
+import net.soggymustache.mythicbeasts.entity.owl.EntityOwl;
+import net.soggymustache.mythicbeasts.entity.owl.RenderOwl;
 import net.soggymustache.mythicbeasts.init.blocks.MythicBlocks;
 import net.soggymustache.mythicbeasts.init.items.MythicItems;
 import net.soggymustache.mythicbeasts.model.ModelDemiguise;
 import net.soggymustache.mythicbeasts.model.ModelNiffler;
 import net.soggymustache.mythicbeasts.model.ModelWasp;
 import net.soggymustache.mythicbeasts.model.ModelSnail;
+import net.soggymustache.mythicbeasts.model.ModelOwl;
 
 public class ClientProxy extends CommonProxy{
 	
@@ -26,6 +29,7 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityNiffler.class, new RenderNiffler(Minecraft.getMinecraft().getRenderManager(), new ModelNiffler(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWasp.class, new RenderWasp(Minecraft.getMinecraft().getRenderManager(), new ModelWasp(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySnail.class, new RenderSnail(Minecraft.getMinecraft().getRenderManager(), new ModelSnail(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(EntityOwl.class, new RenderOwl(Minecraft.getMinecraft().getRenderManager(), new ModelOwl(), 0));
 		
 		MythicBlocks.registerRenders();
 		MythicItems.registerRenderers();

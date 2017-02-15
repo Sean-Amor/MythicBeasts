@@ -8,5 +8,23 @@
     "sounds": [
       "mythic:entity/wasp/ambient"
     ]
+  },
+  "owl.hootDouble": {
+    "category": "neutral",
+    "sounds": [
+      "mythic:entity/owl/hootDouble"
+    ]
+  },
+  "owl.hootSingle": {
+    "category": "neutral",
+    "sounds": [
+      "mythic:entity/owl/hootSingle"
+    ]
+  },
+   "owl.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "mythic:entity/owl/hurt"
+    ]
   }
 }
