@@ -26,6 +26,13 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.util.EnumHand;
+import net.soggymustache.mythicbeasts.init.achieve.MythicAchievements;
+import net.soggymustache.mythicbeasts.init.items.MythicItems;
 
 public class EntityWasp extends EntityFlying implements IMob {
     
@@ -37,6 +44,16 @@ public class EntityWasp extends EntityFlying implements IMob {
         this.tasks.addTask(3, new EntityWasp.AIWaspRandomFly());
         this.tasks.addTask(4, new EntityWasp.AIWaspAttackTarget());
         this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
+    }
+
+    @Override
+    public boolean processInteract(EntityPlayer player, EnumHand hand, ItemStack stack) {
+        ItemStack itemstack = player.inventory.getCurrentItem();
+        
+        if(itemstack.getItem() == MythicItems.book_of_beasts){
+            player.addStat(MythicAchievements.achievementBuzz);
+        }
+        return super.processInteract(player, hand, stack);
     }
     
     @Override
