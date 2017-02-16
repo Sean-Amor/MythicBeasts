@@ -6,7 +6,6 @@ import net.soggymustache.mythicbeasts.entity.demiguise.EntityDemiguise;
 import net.soggymustache.mythicbeasts.entity.niffler.EntityNiffler;
 import net.soggymustache.mythicbeasts.entity.wasp.EntityWasp;
 import net.soggymustache.mythicbeasts.entity.snail.EntitySnail;
-import net.soggymustache.mythicbeasts.entity.owl.EntityOwl;
 
 public class Entity {
 	public static void MythicBeasts(){
@@ -17,7 +16,6 @@ public class Entity {
 			 	createVehicle(EntityWasp.class, "Wasp", 0xB3B3B3, 0xF2F2F2);
 			 	createVehicle(EntityNiffler.class, "Niffler", 0x825C09, 0x181D1F);
 			 	createVehicle(EntitySnail.class, "Snail", 0x825C09, 0x181D1F);
-			 	createVehicle(EntityOwl.class, "Owl", 0x825C09, 0x181D1F);
 		 }
 		 
 		 public static int id = 0;
