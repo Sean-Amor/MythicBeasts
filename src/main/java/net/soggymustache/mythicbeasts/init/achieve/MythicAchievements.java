@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 public class MythicAchievements {
 	
-	public static Achievement achievementUnseen, achievementShiny, achievementBuzz, achievementTrailblazing;
+	public static Achievement achievementUnseen, achievementShiny, achievementBuzz, achievementTrailblazing, achievementHoot;
 	
 	
 	public static void init(FMLInitializationEvent event)
@@ -16,8 +16,9 @@ public class MythicAchievements {
 		achievementShiny = new Achievement("achievement.Shiny", "Shiny", 0, 2, Items.ENDER_PEARL, (Achievement)null).registerStat();
 		achievementBuzz = new Achievement("achievement.Buzz", "Buzz", 0, 3, Items.ENDER_PEARL, (Achievement)null).registerStat();
 		achievementTrailblazing = new Achievement("achievement.Trailblazing", "Trailblazing", 0, 4, Items.ENDER_PEARL, (Achievement)null).registerStat();
+		achievementHoot = new Achievement("achievement.Hoot", "Trailblazing", 0, 5, Items.ENDER_PEARL, (Achievement)null).registerStat();
 
 
-		AchievementPage.registerAchievementPage(new AchievementPage("MythicBeasts", new Achievement[]{achievementUnseen, achievementShiny, achievementBuzz, achievementTrailblazing}));
+		AchievementPage.registerAchievementPage(new AchievementPage("MythicBeasts", new Achievement[]{achievementUnseen, achievementShiny, achievementBuzz, achievementTrailblazing, achievementHoot}));
 	}
 }

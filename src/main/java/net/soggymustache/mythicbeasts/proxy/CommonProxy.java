@@ -12,6 +12,7 @@ import net.soggymustache.mythicbeasts.entity.demiguise.EntityDemiguise;
 import net.soggymustache.mythicbeasts.entity.niffler.EntityNiffler;
 import net.soggymustache.mythicbeasts.entity.wasp.EntityWasp;
 import net.soggymustache.mythicbeasts.entity.snail.EntitySnail;
+import net.soggymustache.mythicbeasts.entity.tinycavespider.EntityTinyCaveSpider;
 import net.soggymustache.mythicbeasts.events.PlayerLogonEvent;
 import net.soggymustache.mythicbeasts.init.achieve.MythicAchievements;
 import net.soggymustache.mythicbeasts.init.achieve.event.CraftingEvent;
@@ -36,6 +37,7 @@ public class CommonProxy {
 		EntityRegistry.addSpawn(EntityWasp.class, 10, 1, 2, EnumCreatureType.CREATURE, Biomes.FOREST, Biomes.FOREST_HILLS, Biomes.PLAINS);
 		EntityRegistry.addSpawn(EntityDemiguise.class, 10, 1, 2, EnumCreatureType.CREATURE, Biomes.JUNGLE);
 		EntityRegistry.addSpawn(EntitySnail.class, 15, 1, 2, EnumCreatureType.CREATURE, Biomes.FOREST, Biomes.FOREST_HILLS, Biomes.PLAINS);
+		EntityRegistry.addSpawn(EntityTinyCaveSpider.class, 15, 1, 5, EnumCreatureType.CREATURE, Biomes.FOREST, Biomes.FOREST_HILLS);
 	}
 	 
 	public void init(FMLInitializationEvent event)	

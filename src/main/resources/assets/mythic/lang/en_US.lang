@@ -2,6 +2,9 @@ entity.mythic.Demiguise.name=Demiguise
 entity.mythic.Niffler.name=Niffler
 entity.mythic.Wasp.name=Glumbumble
 entity.mythic.Snail.name=Streeler
+entity.mythic.TinyCaveSpider.name=Acromantula Hatchling
+entity.Spider.name=Acromantula
+entity.CaveSpider.name=Baby Acromantula
 
 achievement.Unseen=Seeing the Unseen
 achievement.Unseen.desc=Find one Demiguise
@@ -11,6 +14,8 @@ achievement.Buzz=Buzz!
 achievement.Buzz.desc=Find one Glumbumble
 achievement.Trailblazing=Trail Blazing!
 achievement.Trailblazing.desc=Find one Streeler
+achievement.Trailblazing=Hooty Hoo!
+achievement.Trailblazing.desc=Find one Owl
 
 item.invis_cloak.name=Invisibility Cloak
 item.demiguise_pelt.name=Demiguise Pelt
