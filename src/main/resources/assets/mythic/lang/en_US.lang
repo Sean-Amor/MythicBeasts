@@ -20,5 +20,9 @@ achievement.Trailblazing.desc=Find one Owl
 item.invis_cloak.name=Invisibility Cloak
 item.demiguise_pelt.name=Demiguise Pelt
 item.book_of_beasts.name=Book of Beasts
+item.snail_flesh_cooked.name=Seared Streeler Flesh
+item.snail_flesh_raw.name=Raw Streeler Flesh
+item.snail_shell.name=Streeler Shell
+item.poison_gland.name=Streeler Poison Gland
 
 itemGroup.tabMain=Mythic Beasts

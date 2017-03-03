@@ -31,10 +31,14 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.soggymustache.mythicbeasts.init.achieve.MythicAchievements;
 import net.soggymustache.mythicbeasts.init.items.MythicItems;
 
 public class EntityWasp extends EntityFlying implements IMob {
+
+private static final SoundEvent SND_LIVING = new SoundEvent(new ResourceLocation("mythic:entity.wasp.living"));
+private static final SoundEvent SND_HURT = new SoundEvent(new ResourceLocation("mythic:entity.wasp.hurt"));
     
     public EntityWasp(World worldIn) {
         super(worldIn);
@@ -83,13 +87,13 @@ public class EntityWasp extends EntityFlying implements IMob {
     @Override
     protected SoundEvent getAmbientSound()
     {
-        return MBSounds.wasp_ambient;
+        return SND_LIVING;
     }
     
     @Override
     protected SoundEvent getHurtSound()
     {
-        return MBSounds.wasp_hurt;
+        return SND_HURT;
     }
     
     // Helper class representing a point in space that the wasp is targeting for some reason

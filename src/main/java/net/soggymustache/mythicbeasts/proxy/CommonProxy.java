@@ -18,6 +18,8 @@ import net.soggymustache.mythicbeasts.init.achieve.MythicAchievements;
 import net.soggymustache.mythicbeasts.init.achieve.event.CraftingEvent;
 import net.soggymustache.mythicbeasts.init.blocks.MythicBlocks;
 import net.soggymustache.mythicbeasts.init.items.MythicItems;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.util.EnumParticleTypes;
 import net.soggymustache.mythicbeasts.init.items.crafting.MythicCrafting;
 
 public class CommonProxy {

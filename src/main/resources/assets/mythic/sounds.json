@@ -1,30 +1,32 @@
 {
+  "entity.snail.living": {
+    "category": "hostile",
+    "sounds": [
+      "mythic:entity/snail/living"
+    ]
+  },
+  "entity.snail.hurt": {
+    "category": "hostile",
+    "sounds": [
+      "mythic:entity/snail/hurt"
+    ]
+  },
+  "entity.snail.death": {
+    "category": "hostile",
+    "sounds": [
+      "mythic:entity/snail/death"
+    ]
+  },
+  "entity.wasp.living": {
+    "category": "hostile",
+    "sounds": [
+      "mythic:entity/wasp/living"
+    ]
+  },
   "entity.wasp.hurt": {
+    "category": "hostile",
     "sounds": [
       "mythic:entity/wasp/hurt"
-    ]
-  },
-  "entity.wasp.ambient": {
-    "sounds": [
-      "mythic:entity/wasp/ambient"
-    ]
-  },
-  "owl.hootDouble": {
-    "category": "neutral",
-    "sounds": [
-      "mythic:entity/owl/hootDouble"
-    ]
-  },
-  "owl.hootSingle": {
-    "category": "neutral",
-    "sounds": [
-      "mythic:entity/owl/hootSingle"
-    ]
-  },
-   "owl.hurt": {
-    "category": "neutral",
-    "sounds": [
-      "mythic:entity/owl/hurt"
     ]
   }
 }
