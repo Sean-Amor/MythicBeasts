@@ -5,20 +5,24 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.soggymustache.mythicbeasts.Reference;
 import net.soggymustache.mythicbeasts.entity.projectiles.EntitySnailPoisonJet;
 
 @SideOnly(Side.CLIENT)
-public class RenderSnailPoisonJet extends Render<EntitySnailPoisonJet> {
+public class RenderSnailPoisonJet extends Render<EntitySnailPoisonJet>
+{
+	private static final ResourceLocation POISONJET = new ResourceLocation(Reference.MOD_ID + ":textures/entity/poisonjet.png");
+	
 	public RenderSnailPoisonJet(RenderManager renderManager) {
 		super(renderManager);
 	}
-
+    
 	@Override
 	public void doRender(EntitySnailPoisonJet entity, double x, double y, double z, float entityYaw, float partialTicks) {
 	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntitySnailPoisonJet entity) {
-		return null;
+		return POISONJET;
 	}
 }
