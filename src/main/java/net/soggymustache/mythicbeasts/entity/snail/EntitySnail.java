@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 
 import net.minecraft.entity.ai.EntityAIAttackMelee;
@@ -14,9 +15,13 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.EntityAIAttackRanged;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.entity.projectile.EntitySnowball;
+
 
 import net.minecraft.item.ItemStack;
 
@@ -57,8 +62,7 @@ import net.soggymustache.mythicbeasts.init.items.MythicItems;
 
 import soundapi.api.sound.MBSounds;
 
-public class EntitySnail extends EntityMob implements IEntityBL {
-private static final DataParameter<Integer> RANGE_ATTACK_TIMER = EntityDataManager.createKey(EntitySnail.class, DataSerializers.VARINT);
+public class EntitySnail extends EntityMob implements IMob {
 
 private static final SoundEvent SND_LIVING = new SoundEvent(new ResourceLocation("mythic:entity.snail.living"));
 private static final SoundEvent SND_HURT = new SoundEvent(new ResourceLocation("mythic:entity.snail.hurt"));
@@ -75,7 +79,7 @@ private static final SoundEvent SND_DEATH = new SoundEvent(new ResourceLocation(
         tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
         tasks.addTask(4, new EntityAILookIdle(this));
         targetTasks.addTask(0, new EntityAIHurtByTarget(this, false));
-        targetTasks.addTask(1, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, false, true));
+        targetTasks.addTask(5, new EntityAINearestAttackableTarget<EntityPlayer>(this, EntityPlayer.class, false, true));
     }
     
     @Override
@@ -96,21 +100,16 @@ private static final SoundEvent SND_DEATH = new SoundEvent(new ResourceLocation(
             player.addStat(MythicAchievements.achievementTrailblazing);
         }
         return super.processInteract(player, hand, stack);
-    }
 
-    @Override
-    protected void entityInit() {
-        super.entityInit();
-        dataManager.register(RANGE_ATTACK_TIMER, 0);
     }
 
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
-        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.4D);
+        getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
         getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
         getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
-        getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(16.0D);
+        getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(10.0D);
     }
 
     @Override
@@ -169,39 +168,5 @@ private static final SoundEvent SND_DEATH = new SoundEvent(new ResourceLocation(
             return true;
         } else
             return false;
-    }
-
-    @Override
-    public void onUpdate() {
-        super.onUpdate();
-        if (getAttackTarget() != null && this.isEntityAlive()) {
-            float distance = (float) getDistance(getAttackTarget().posX, getAttackTarget().getEntityBoundingBox().minY, getAttackTarget().posZ);
-            if (getRangeAttackTimer() < 100 && distance > 3)
-                setRangeAttackTimer(getRangeAttackTimer() + 2);
-            if (getRangeAttackTimer() == 100 && distance > 3)
-                shootMissile(getAttackTarget(), distance);
-        }
-    }
-
-    public void shootMissile(EntityLivingBase entity, float distance) {
-        setRangeAttackTimer(0);
-        if (canEntityBeSeen(entity)) {
-            EntityThrowable missile = new EntitySnailPoisonJet(worldObj, this);
-            missile.rotationPitch -= -20.0F;
-            double targetX = entity.posX + entity.motionX - posX;
-            double targetY = entity.posY + entity.getEyeHeight() - 1.100000023841858D - posY;
-            double targetZ = entity.posZ + entity.motionZ - posZ;
-            float target = MathHelper.sqrt_double(targetX * targetX + targetZ * targetZ);
-            missile.setThrowableHeading(targetX, targetY + target * 0.1F, targetZ, 0.75F, 8.0F);
-            worldObj.spawnEntityInWorld(missile);
-        }
-    }
-
-    public int getRangeAttackTimer() {
-        return dataManager.get(RANGE_ATTACK_TIMER);
-    }
-
-    public void setRangeAttackTimer(int size) {
-        dataManager.set(RANGE_ATTACK_TIMER, size);
     }
 }
