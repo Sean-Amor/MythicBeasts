@@ -12,8 +12,6 @@ import net.soggymustache.mythicbeasts.entity.wasp.EntityWasp;
 import net.soggymustache.mythicbeasts.entity.wasp.RenderWasp;
 import net.soggymustache.mythicbeasts.entity.snail.EntitySnail;
 import net.soggymustache.mythicbeasts.entity.snail.RenderSnail;
-import net.soggymustache.mythicbeasts.entity.projectiles.EntitySnailPoisonJet;
-import net.soggymustache.mythicbeasts.entity.projectiles.RenderSnailPoisonJet;
 import net.soggymustache.mythicbeasts.entity.tinycavespider.EntityTinyCaveSpider;
 import net.soggymustache.mythicbeasts.entity.tinycavespider.RenderTinyCaveSpider;
 import net.soggymustache.mythicbeasts.init.blocks.MythicBlocks;
@@ -34,7 +32,6 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityNiffler.class, new RenderNiffler(Minecraft.getMinecraft().getRenderManager(), new ModelNiffler(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWasp.class, new RenderWasp(Minecraft.getMinecraft().getRenderManager(), new ModelWasp(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntitySnail.class, new RenderSnail(Minecraft.getMinecraft().getRenderManager(), new ModelSnail(), 0));
-		RenderingRegistry.registerEntityRenderingHandler(EntitySnailPoisonJet.class, new RenderSnailPoisonJet(Minecraft.getMinecraft().getRenderManager()));
 		RenderingRegistry.registerEntityRenderingHandler(EntityTinyCaveSpider.class, new RenderTinyCaveSpider(Minecraft.getMinecraft().getRenderManager(), new ModelTinyCaveSpider(), 0));
 
 		

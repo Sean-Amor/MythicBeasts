@@ -55,7 +55,6 @@ import net.minecraft.world.World;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import net.soggymustache.mythicbeasts.entity.projectiles.EntitySnailPoisonJet;
 import net.soggymustache.mythicbeasts.entity.IEntityBL;
 import net.soggymustache.mythicbeasts.init.achieve.MythicAchievements;
 import net.soggymustache.mythicbeasts.init.items.MythicItems;

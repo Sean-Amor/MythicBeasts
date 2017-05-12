@@ -6,7 +6,6 @@ import net.soggymustache.mythicbeasts.entity.demiguise.EntityDemiguise;
 import net.soggymustache.mythicbeasts.entity.niffler.EntityNiffler;
 import net.soggymustache.mythicbeasts.entity.wasp.EntityWasp;
 import net.soggymustache.mythicbeasts.entity.snail.EntitySnail;
-import net.soggymustache.mythicbeasts.entity.projectiles.EntitySnailPoisonJet;
 import net.soggymustache.mythicbeasts.entity.tinycavespider.EntityTinyCaveSpider;
 
 public class Entity {
@@ -19,7 +18,6 @@ public class Entity {
 			 	createVehicle(EntityNiffler.class, "Niffler", 0x825C09, 0x181D1F);
 			 	createVehicle(EntitySnail.class, "Snail", 0x825C09, 0x181D1F);
 			 	createVehicle(EntityTinyCaveSpider.class, "TinyCaveSpider", 0x825C09, 0x181D1F);
-			 	createVehicle(EntitySnailPoisonJet.class, "SnailPoisonJet", 0x825C09, 0x181D1F);
 		 }
 		 
 		 public static int id = 0;
